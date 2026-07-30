@@ -128,57 +128,24 @@
   body { padding-left: 140px; }
 
   @media (max-width: 768px) {
-    #top-nav { width: 90px; padding: 10px 0; }
-    .nav-item { padding: 10px 6px; font-size: 10px; }
-    body { padding-left: 90px; }
-    .container { padding: 0 12px; }
-    .day-card { margin-left: 36px; }
-    .hero h1 { font-size: 24px; }
-    .hero { padding: 36px 16px 32px; }
-    .info-grid { grid-template-columns: 1fr; }
-    .overview-grid { grid-template-columns: repeat(2, 1fr); }
-    table { font-size: 11px; }
-    th, td { padding: 6px 8px; }
-  }
-  @media (max-width: 500px) {
-    #top-nav {
-      position: fixed;
-      top: 0; bottom: 0;
-      width: 64px;
-      border-right: 1px solid var(--border);
-      border-bottom: none;
-      padding: 8px 0;
-      overflow-x: hidden;
-      overflow-y: auto;
-    }
-    .nav-inner { flex-direction: column; gap: 1px; padding: 0 3px; }
-    .nav-item { border-left: 2px solid transparent; border-bottom: none; border-radius: 0 4px 4px 0; white-space: nowrap; padding: 8px 4px; font-size: 9px; text-align: center; overflow: hidden; text-overflow: ellipsis; }
-    .nav-item.active { border-left-color: var(--vermillion); border-bottom-color: transparent; background: #fef3e4; }
-    body { padding-left: 64px; padding-bottom: 0; }
-    .container { padding: 0 10px; }
+    #top-nav { width: 80px; padding: 10px 0; }
+    .nav-item { padding: 10px 4px; font-size: 10px; text-align: center; }
+    body { padding-left: 80px; }
+    .container { padding: 0 14px; }
     .day-card { margin-left: 0; }
     .timeline::before { display: none; }
     .day-dot { display: none; }
-    .hero h1 { font-size: 22px; }
-    .hero { padding: 28px 12px 24px; }
-    .hero .badges { gap: 6px; }
-    .hero .badge { font-size: 11px; padding: 4px 10px; }
-    .hero .sub { font-size: 13px; }
-    .sec-title h2 { font-size: 19px; }
-    .sec-title h2::before, .sec-title h2::after { width: 18px; }
-    .day-card .day-header { padding: 10px 14px; gap: 8px; }
-    .day-card .day-title { font-size: 14px; }
-    .day-card .day-body { padding: 12px; }
+    .hero h1 { font-size: 24px; }
+    .hero { padding: 32px 14px 28px; }
     .info-grid { grid-template-columns: 1fr; }
-    .overview-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-    .ov-card { padding: 14px 10px; }
-    .ov-card .val { font-size: 16px; }
-    .photo-card { min-width: 80px; height: 90px; }
-    table { font-size: 10px; }
-    th, td { padding: 5px 6px; }
-    #rate-bar { padding: 10px 12px; font-size: 12px; }
-    #rate-bar span { font-size: 11px !important; }
-    #rate-cny-jpy { font-size: 13px !important; }
+    .overview-grid { grid-template-columns: repeat(2, 1fr); }
+    table { font-size: 12px; }
+    th, td { padding: 6px 7px; }
+    .sec-title h2 { font-size: 20px; }
+    .sec-title h2::before, .sec-title h2::after { width: 20px; }
+    #rate-bar { flex-direction: column; align-items: flex-start; gap: 6px; padding: 10px 14px; }
+    #quick-conv { gap: 4px; }
+    #quick-conv .tag { font-size: 10px; padding: 1px 6px; }
   }
 
   .hero .badge {
@@ -435,14 +402,6 @@
     .hero { padding: 30px 20px; }
   }
 
-  /* ── Responsive ── */
-  @media (max-width: 640px) {
-    .timeline::before { left: 12px; }
-    .day-card { margin-left: 34px; }
-    .day-dot { left: 5px; }
-    .day-card .day-header { padding: 12px 14px; }
-    .day-card .day-body { padding: 14px; }
-  }
 </style>
 </head>
 <body>
