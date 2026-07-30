@@ -139,19 +139,19 @@
   }
   @media (max-width: 500px) {
     #top-nav {
-      position: sticky;
-      top: 0; bottom: auto;
-      width: 100%; height: auto;
-      border-right: none;
-      border-bottom: 1px solid var(--border);
-      padding: 0;
-      overflow-x: auto;
-      overflow-y: hidden;
+      position: fixed;
+      top: 0; bottom: 0;
+      width: 64px;
+      border-right: 1px solid var(--border);
+      border-bottom: none;
+      padding: 8px 0;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
-    .nav-inner { flex-direction: row; gap: 0; padding: 0 4px; }
-    .nav-item { border-left: none; border-bottom: 2px solid transparent; border-radius: 0; white-space: nowrap; padding: 10px 8px; font-size: 10px; }
-    .nav-item.active { border-left-color: transparent; border-bottom-color: var(--vermillion); background: #fef3e4; }
-    body { padding-left: 0; padding-bottom: 0; }
+    .nav-inner { flex-direction: column; gap: 1px; padding: 0 3px; }
+    .nav-item { border-left: 2px solid transparent; border-bottom: none; border-radius: 0 4px 4px 0; white-space: nowrap; padding: 8px 4px; font-size: 9px; text-align: center; overflow: hidden; text-overflow: ellipsis; }
+    .nav-item.active { border-left-color: var(--vermillion); border-bottom-color: transparent; background: #fef3e4; }
+    body { padding-left: 64px; padding-bottom: 0; }
     .container { padding: 0 10px; }
     .day-card { margin-left: 0; }
     .timeline::before { display: none; }
