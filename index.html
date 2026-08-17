@@ -492,7 +492,7 @@
 
 <script>
 // ── Live Exchange Rate (Frankfurter API, free, no key needed) ──
-const FALLBACK_RATE = 20.5; // 1 CNY ≈ 20.5 JPY (fallback)
+const FALLBACK_RATE = 23.6; // 1 CNY ≈ 23.6 JPY (fallback, 2026-08)
 
 async function fetchRate() {
   const timeEl = document.getElementById('rate-time');
@@ -540,6 +540,16 @@ function updateRates(rate) {
       const cny = Math.round(jpy / rate);
       el.innerHTML = '≈¥' + cny.toLocaleString();
       el.title = '¥' + jpy.toLocaleString() + ' JPY · 按实时汇率换算';
+      el.style.cursor = 'help';
+    }
+  });
+
+  // Update price ranges (data-jpy-range="min,max")
+  document.querySelectorAll('[data-jpy-range]').forEach(el => {
+    const [min, max] = el.getAttribute('data-jpy-range').split(',').map(Number);
+    if (!isNaN(min) && !isNaN(max)) {
+      el.innerHTML = '≈¥' + Math.round(min / rate).toLocaleString() + '-' + Math.round(max / rate).toLocaleString();
+      el.title = '¥' + min.toLocaleString() + '-' + max.toLocaleString() + ' JPY · 按实时汇率换算';
       el.style.cursor = 'help';
     }
   });
@@ -1080,7 +1090,7 @@ setInterval(fetchRate, 30 * 60 * 1000);
 <div style="background:#fff;border-radius:14px;padding:20px;border:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.04);margin-bottom:20px;">
   <h3 style="color:var(--indigo);border-bottom:3px solid var(--gold);padding-bottom:8px;margin-bottom:14px;">🐎 Ralph Lauren 拉夫劳伦</h3>
   <div style="background:#f0f7e8;border-radius:8px;padding:10px 14px;margin-bottom:14px;text-align:center;font-weight:700;color:#2e7d32;">
-    💰 日本买 ≈ 国内 4-6 折！经典Polo衫国内¥1000+ → 日本≈¥500以内
+    💰 日本买 ≈ 国内 3.5-5 折！经典Polo衫国内¥1000+ → 日本≈¥430以内
   </div>
 
   <div class="info-grid">
@@ -1097,22 +1107,22 @@ setInterval(fetchRate, 30 * 60 * 1000);
       <h4>📊 价格参考</h4>
       <table style="font-size:13px;">
         <tr><th>单品</th><th>国内价</th><th>日本到手</th></tr>
-        <tr><td>经典Polo衫</td><td>≈¥1,000+</td><td class="price">≈¥500</td></tr>
-        <tr><td>针织开衫</td><td>≈¥2,000</td><td class="price">≈¥1,000</td></tr>
-        <tr><td>鸭舌帽</td><td>≈¥500+</td><td class="price">≈¥200</td></tr>
-        <tr><td>毛衣</td><td>≈¥1,800</td><td class="price">≈¥1,000</td></tr>
-        <tr><td>羽绒服</td><td>≈¥3,000+</td><td class="price">≈¥1,500</td></tr>
+        <tr><td>经典Polo衫</td><td>≈¥1,000+</td><td class="price">≈¥430</td></tr>
+        <tr><td>针织开衫</td><td>≈¥2,000</td><td class="price">≈¥850</td></tr>
+        <tr><td>鸭舌帽</td><td>≈¥500+</td><td class="price">≈¥170</td></tr>
+        <tr><td>毛衣</td><td>≈¥1,800</td><td class="price">≈¥850</td></tr>
+        <tr><td>羽绒服</td><td>≈¥3,000+</td><td class="price">≈¥1,280</td></tr>
       </table>
     </div>
   </div>
-  <p style="font-size:12px;color:var(--muted);margin-top:8px;">💡 <strong>省钱公式</strong>：日本定价（国内5-7折）× 商场折扣（9-95折）× 退税（约92折）= <strong>≈国内4-6折</strong>。出发前在 ralphlauren.co.jp 查好库存。</p>
+  <p style="font-size:12px;color:var(--muted);margin-top:8px;">💡 <strong>省钱公式</strong>：日本定价（国内4.5-6折）× 商场折扣（9-95折）× 退税（约92折）= <strong>≈国内3.5-5折</strong>。出发前在 ralphlauren.co.jp 查好库存。</p>
 </div>
 
 <!-- ── Lululemon ── -->
 <div style="background:#fff;border-radius:14px;padding:20px;border:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.04);margin-bottom:20px;">
   <h3 style="color:var(--indigo);border-bottom:3px solid #d63333;padding-bottom:8px;margin-bottom:14px;">🍋 Lululemon 露露乐蒙</h3>
   <div style="background:#ffeaea;border-radius:8px;padding:10px 14px;margin-bottom:14px;text-align:center;font-weight:700;color:#b91c1c;">
-    💰 日本买 ≈ 国内 6-7.5 折！Define夹克≈¥700出头 <span class="rel rel-u">🟡参考</span>，国内≈¥850+
+    💰 日本买 ≈ 国内 5.5-6.5 折！Define夹克≈¥600出头 <span class="rel rel-u">🟡参考</span>，国内≈¥850+
   </div>
 
   <div class="info-grid">
@@ -1141,17 +1151,17 @@ setInterval(fetchRate, 30 * 60 * 1000);
 <div style="background:#fff;border-radius:14px;padding:20px;border:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.04);margin-bottom:20px;">
   <h3 style="color:var(--indigo);border-bottom:3px solid #111;padding-bottom:8px;margin-bottom:14px;">🖤 Chanel 香奈儿 · 包袋 · 卡包 · 饰品</h3>
   <div style="background:#f5f5f5;border-radius:8px;padding:10px 14px;margin-bottom:14px;text-align:center;font-weight:700;color:#111;">
-    💰 2026日元汇率低位，日本退完税 ≈ 国内 <strong>7-8 折</strong> <span class="rel rel-u">🟡参考</span>！已反超欧洲成全球最划算地区
+    💰 2026日元汇率低位，日本退完税 ≈ 国内 <strong>6-7 折</strong> <span class="rel rel-u">🟡参考</span>！已反超欧洲成全球最划算地区
   </div>
 
   <!-- 包袋 -->
   <h4 style="color:var(--indigo);margin-bottom:8px;">👜 经典包袋</h4>
   <table>
     <tr><th>款式</th><th>国内专柜 ≈</th><th>日本退税后 ≈</th><th>省钱</th></tr>
-    <tr><td><strong>CF 中号 Classic Flap</strong></td><td>¥68,500</td><td class="price">≈¥57,000-61,000</td><td style="color:#2e7d32;font-weight:700;">省 ¥7,500-11,500 <span class="rel rel-u">🟡参考</span></td></tr>
-    <tr><td><strong>CHANEL 19 手袋</strong></td><td>¥56,600</td><td class="price">≈¥50,000</td><td style="color:#2e7d32;font-weight:700;">省 ≈¥6,000 <span class="rel rel-u">🟡参考</span></td></tr>
-    <tr><td><strong>22 Bag 手袋</strong></td><td>¥49,800</td><td class="price">≈¥44,600</td><td style="color:#2e7d32;font-weight:700;">省 ≈¥5,200 <span class="rel rel-u">🟡参考</span></td></tr>
-    <tr><td><strong>Mini CF 金球款</strong></td><td>≈¥45,000+</td><td class="price">≈¥39,000（叠返点）</td><td style="color:#2e7d32;font-weight:700;">省 ≈¥6,000 <span class="rel rel-u">🟡参考</span></td></tr>
+    <tr><td><strong>CF 中号 Classic Flap</strong></td><td>¥68,500</td><td class="price">≈¥49,000-53,000</td><td style="color:#2e7d32;font-weight:700;">省 ¥15,500-19,500 <span class="rel rel-u">🟡参考</span></td></tr>
+    <tr><td><strong>CHANEL 19 手袋</strong></td><td>¥56,600</td><td class="price">≈¥43,000</td><td style="color:#2e7d32;font-weight:700;">省 ≈¥13,600 <span class="rel rel-u">🟡参考</span></td></tr>
+    <tr><td><strong>22 Bag 手袋</strong></td><td>¥49,800</td><td class="price">≈¥38,000</td><td style="color:#2e7d32;font-weight:700;">省 ≈¥11,800 <span class="rel rel-u">🟡参考</span></td></tr>
+    <tr><td><strong>Mini CF 金球款</strong></td><td>≈¥45,000+</td><td class="price">≈¥33,000（叠返点）</td><td style="color:#2e7d32;font-weight:700;">省 ≈¥12,000 <span class="rel rel-u">🟡参考</span></td></tr>
   </table>
 
   <!-- 卡包 & 饰品 -->
@@ -1159,9 +1169,9 @@ setInterval(fetchRate, 30 * 60 * 1000);
     <div class="info-box" style="border-left-color:#111;">
       <h4>💳 卡包 · 钱包（SLG小皮具）</h4>
       <ul style="font-size:13px;">
-        <li><strong>经典翻盖卡包</strong>（Flap Card Holder）— 国内≈¥5,000 → 日本退税后 <span class="price">≈¥3,800-4,200</span></li>
-        <li><strong>拉链零钱包</strong>（Zip Coin Purse）— 国内≈¥4,500 → 日本 <span class="price">≈¥3,400-3,800</span></li>
-        <li><strong>经典长夹</strong>（Classic Long Wallet）— 国内≈¥8,000+ → 日本 <span class="price">≈¥6,000-7,000</span></li>
+        <li><strong>经典翻盖卡包</strong>（Flap Card Holder）— 国内≈¥5,000 → 日本退税后 <span class="price">≈¥3,200-3,600</span></li>
+        <li><strong>拉链零钱包</strong>（Zip Coin Purse）— 国内≈¥4,500 → 日本 <span class="price">≈¥2,900-3,200</span></li>
+        <li><strong>经典长夹</strong>（Classic Long Wallet）— 国内≈¥8,000+ → 日本 <span class="price">≈¥5,100-6,000</span></li>
         <li>💡 SLG（小型皮具）<strong>定价本身就低</strong>，退税+汇率双重优惠下性价比极高，适合入门</li>
         <li>🏪 银座旗舰店货最全 · 新宿伊势丹有限定色 · 热门黑色款靠运气</li>
       </ul>
@@ -1169,10 +1179,10 @@ setInterval(fetchRate, 30 * 60 * 1000);
     <div class="info-box" style="border-left-color:#c9a23b;">
       <h4>💎 耳环 · 项链 · 配饰</h4>
       <ul style="font-size:13px;">
-        <li><strong>双C Logo耳环</strong>（经典款）— 国内≈¥3,500-5,000 → 日本 <span class="price">≈¥2,700-3,800</span></li>
-        <li><strong>珍珠耳环/项链</strong> — 国内≈¥4,000-8,000 → 日本 <span class="price">≈¥3,000-6,000</span></li>
-        <li><strong>金属链条项链</strong> — 国内≈¥5,000-9,000 → 日本 <span class="price">≈¥3,800-7,000</span></li>
-        <li>💡 配饰类定价约为国内的 <strong>7-7.5折</strong>，百元级价差也很可观</li>
+        <li><strong>双C Logo耳环</strong>（经典款）— 国内≈¥3,500-5,000 → 日本 <span class="price">≈¥2,300-3,200</span></li>
+        <li><strong>珍珠耳环/项链</strong> — 国内≈¥4,000-8,000 → 日本 <span class="price">≈¥2,600-5,100</span></li>
+        <li><strong>金属链条项链</strong> — 国内≈¥5,000-9,000 → 日本 <span class="price">≈¥3,200-6,000</span></li>
+        <li>💡 配饰类定价约为国内的 <strong>6-6.5折</strong>，百元级价差也很可观</li>
         <li>⚠️ 热门款（珍珠耳环/双C耳钉）容易断货，<strong>开门就去</strong></li>
       </ul>
     </div>
@@ -1202,14 +1212,14 @@ setInterval(fetchRate, 30 * 60 * 1000);
       </ul>
     </div>
   </div>
-  <p style="font-size:12px;color:var(--muted);margin-top:8px;">💡 <strong>总结</strong>：CF中号省≈一趟机票💰 卡包/饰品≈国内7-7.5折，入门首选。包袋去<strong>银座旗舰店</strong>（款全退10%），卡包饰品去<strong>池袋东武</strong>（退10%+5%返点无敌）。热门黑色款全东京都难买，一早冲！</p>
+  <p style="font-size:12px;color:var(--muted);margin-top:8px;">💡 <strong>总结</strong>：CF中号省≈一趟机票💰 卡包/饰品≈国内6-6.5折，入门首选。包袋去<strong>银座旗舰店</strong>（款全退10%），卡包饰品去<strong>池袋东武</strong>（退10%+5%返点无敌）。热门黑色款全东京都难买，一早冲！</p>
 </div>
 
 <!-- ── Shoes ── -->
 <div style="background:#fff;border-radius:14px;padding:20px;border:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.04);margin-bottom:20px;">
   <h3 style="color:var(--indigo);border-bottom:3px solid #0288d1;padding-bottom:8px;margin-bottom:14px;">👟 鞋子 · 日本必买品牌</h3>
   <div style="background:#e3f2fd;border-radius:8px;padding:10px 14px;margin-bottom:14px;text-align:center;font-weight:700;color:#1565c0;">
-    👟 日本买鞋 ≈ 国内 5-7 折！鬼冢虎日本制款便宜¥200+
+    👟 日本买鞋 ≈ 国内 4-6 折！鬼冢虎日本制款便宜¥200+
   </div>
 
   <div class="info-grid">
@@ -1226,9 +1236,9 @@ setInterval(fetchRate, 30 * 60 * 1000);
       <h4>🥾 Keen 溯溪鞋</h4>
       <ul style="font-size:13px;">
         <li>🥇 <strong>木更津奥莱</strong>：5-7折，男款多</li>
-        <li>🥈 <strong>大阪·阪急百货4F</strong>：95折+退税<strong>不到¥750</strong></li>
+        <li>🥈 <strong>大阪·阪急百货4F</strong>：95折+退税<strong>不到¥640</strong></li>
         <li>🥉 <strong>大阪·LUCUA 6F</strong>：货最全（10:30开门冲）</li>
-        <li>💡 小脚女生可试童鞋款 <strong>≈¥400</strong></li>
+        <li>💡 小脚女生可试童鞋款 <strong>≈¥340</strong></li>
       </ul>
     </div>
     <div class="info-box" style="border-left-color:#7b1fa2;">
@@ -1245,7 +1255,7 @@ setInterval(fetchRate, 30 * 60 * 1000);
       <ul style="font-size:13px;">
         <li>📍 <strong>全日本仅一家店！</strong>表参道·神宮前4丁目25-7</li>
         <li>🕐 12:00-19:00 · <span style="color:var(--vermillion)">⚠️ 周三定休</span></li>
-        <li>💰 经典乐福鞋/玛丽珍 ≈<strong>¥37,000-42,000</strong>（≈¥1,800-2,100 CNY）</li>
+        <li>💰 经典乐福鞋/玛丽珍 ≈<strong>¥37,000-42,000</strong>（<span data-jpy-range="37000,42000">≈¥--</span> CNY）</li>
         <li>💰 匡威联名款 ≈皮鞋的一半价</li>
         <li>🛍️ <strong>可免税！</strong>持护照直接减消费税</li>
         <li>👟 尺码不偏，平时穿多大就买多大</li>
@@ -1270,7 +1280,7 @@ setInterval(fetchRate, 30 * 60 * 1000);
 <div style="background:#fff;border-radius:14px;padding:20px;border:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.04);margin-bottom:20px;">
   <h3 style="color:var(--indigo);border-bottom:3px solid #f4a460;padding-bottom:8px;margin-bottom:14px;">🌸 SOU·SOU 帆布包 · 和风文创</h3>
   <div style="background:#fff8f0;border-radius:8px;padding:10px 14px;margin-bottom:14px;text-align:center;font-weight:700;color:#d2691e;">
-    💰 帆布袋≈¥70起 · 热门数字款≈¥200-280 · 满¥5,500可退税 <span class="rel rel-o">🟢官方</span>！
+    💰 帆布袋<span data-jpy="1380">≈¥--</span>起 · 热门数字款<span data-jpy-range="4700,5500">≈¥--</span> · 满¥5,500可退税 <span class="rel rel-o">🟢官方</span>！
   </div>
 
   <div class="info-grid">
@@ -1289,12 +1299,12 @@ setInterval(fetchRate, 30 * 60 * 1000);
       <h4>📊 价格参考</h4>
       <table style="font-size:13px;">
         <tr><th>单品</th><th>日元</th><th>≈CNY</th></tr>
-        <tr><td>入门帆布包（红色）</td><td>¥1,380</td><td class="price">≈¥70</td><td><span class="rel rel-u">🟡参考</span></td></tr>
-        <tr><td>基础帆布袋 大/中/小</td><td>¥1,680-2,390</td><td class="price">≈¥85-120</td><td><span class="rel rel-u">🟡参考</span></td></tr>
-        <tr><td>🏆 热门数字挎包（含肩带）</td><td>¥4,700-5,500</td><td class="price">≈¥240-280</td><td><span class="rel rel-u">🟡参考</span></td></tr>
-        <tr><td>Y.托特包 A4（手工染色）</td><td>¥8,580</td><td class="price">≈¥440</td><td><span class="rel rel-u">🟡参考</span></td></tr>
-        <tr><td>分趾足袋鞋</td><td>¥4,290起</td><td class="price">≈¥220起</td></tr>
-        <tr><td>水杯/袜子/文创</td><td>¥990-1,540</td><td class="price">≈¥50-80</td></tr>
+        <tr><td>入门帆布包（红色）</td><td>¥1,380</td><td class="price"><span data-jpy="1380">≈¥--</span></td><td><span class="rel rel-u">🟡参考</span></td></tr>
+        <tr><td>基础帆布袋 大/中/小</td><td>¥1,680-2,390</td><td class="price"><span data-jpy-range="1680,2390">≈¥--</span></td><td><span class="rel rel-u">🟡参考</span></td></tr>
+        <tr><td>🏆 热门数字挎包（含肩带）</td><td>¥4,700-5,500</td><td class="price"><span data-jpy-range="4700,5500">≈¥--</span></td><td><span class="rel rel-u">🟡参考</span></td></tr>
+        <tr><td>Y.托特包 A4（手工染色）</td><td>¥8,580</td><td class="price"><span data-jpy="8580">≈¥--</span></td><td><span class="rel rel-u">🟡参考</span></td></tr>
+        <tr><td>分趾足袋鞋</td><td>¥4,290起</td><td class="price"><span data-jpy="4290">≈¥--</span>起</td></tr>
+        <tr><td>水杯/袜子/文创</td><td>¥990-1,540</td><td class="price"><span data-jpy-range="990,1540">≈¥--</span></td></tr>
       </table>
     </div>
   </div>
@@ -1327,7 +1337,7 @@ setInterval(fetchRate, 30 * 60 * 1000);
 <div style="background:#fff;border-radius:14px;padding:20px;border:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.04);margin-bottom:20px;">
   <h3 style="color:var(--indigo);border-bottom:3px solid #8b6f47;padding-bottom:8px;margin-bottom:14px;">🧣 Burberry 巴宝莉 · 经典格纹围巾</h3>
   <div style="background:#f6f0e8;border-radius:8px;padding:10px 14px;margin-bottom:14px;text-align:center;font-weight:700;color:#7a5c2e;">
-    🧣 经典羊绒格纹围巾 ≈ 国内 <strong>6-7 折</strong> <span class="rel rel-u">🟡参考</span>！日本退税后比国内专柜省 ¥1,000+
+    🧣 经典羊绒格纹围巾 ≈ 国内 <strong>5-6 折</strong> <span class="rel rel-u">🟡参考</span>！日本退税后比国内专柜省 ¥1,300+
   </div>
 
   <div class="info-grid">
@@ -1343,9 +1353,9 @@ setInterval(fetchRate, 30 * 60 * 1000);
       <h4>📊 价格参考</h4>
       <table style="font-size:13px;">
         <tr><th>单品</th><th>国内 ≈</th><th>日本退税后 ≈</th></tr>
-        <tr><td>经典羊绒格纹围巾</td><td>≈¥3,300-4,200</td><td class="price">≈¥2,300-3,000</td></tr>
-        <tr><td>羊毛格纹围巾（薄款）</td><td>≈¥2,200-2,800</td><td class="price">≈¥1,500-2,000</td></tr>
-        <tr><td>格纹围巾披肩（大号）</td><td>≈¥4,500-5,500</td><td class="price">≈¥3,200-4,000</td></tr>
+        <tr><td>经典羊绒格纹围巾</td><td>≈¥3,300-4,200</td><td class="price">≈¥2,000-2,600</td></tr>
+        <tr><td>羊毛格纹围巾（薄款）</td><td>≈¥2,200-2,800</td><td class="price">≈¥1,300-1,700</td></tr>
+        <tr><td>格纹围巾披肩（大号）</td><td>≈¥4,500-5,500</td><td class="price">≈¥2,700-3,400</td></tr>
       </table>
     </div>
   </div>
@@ -1371,7 +1381,7 @@ setInterval(fetchRate, 30 * 60 * 1000);
       </ul>
     </div>
   </div>
-  <p style="font-size:12px;color:var(--muted);margin-top:8px;">💡 <strong>总结</strong>：经典羊绒格纹围巾日本≈国内6-7折，省¥1,000+。Day4御殿场奥莱顺路碰运气，Day5银座专柜货全兜底。9月底刚好入秋，买回来直接能用！</p>
+  <p style="font-size:12px;color:var(--muted);margin-top:8px;">💡 <strong>总结</strong>：经典羊绒格纹围巾日本≈国内5-6折，省¥1,300+。Day4御殿场奥莱顺路碰运气，Day5银座专柜货全兜底。9月底刚好入秋，买回来直接能用！</p>
 </div>
 
 <!-- ═══════════ SHOPPING × ITINERARY ═══════════ -->
@@ -1394,7 +1404,7 @@ setInterval(fetchRate, 30 * 60 * 1000);
         👞 <strong>Tokyo Bopper</strong>：表参道·神宮前4丁目25-7（涩谷步行15分钟）<br>
         &nbsp;&nbsp;&nbsp;🕐 12:00-19:00 · 可免税 · 全日本仅此一家<br>
         🎒 <strong>SOU·SOU 青山店</strong>：港区南青山5-4-24（表参道附近）<br>
-        &nbsp;&nbsp;&nbsp;🕐 11:00-20:00 · 数字帆布包≈¥240-280<br>
+        &nbsp;&nbsp;&nbsp;🕐 11:00-20:00 · 数字帆布包<span data-jpy-range="4700,5500">≈¥--</span><br>
         🛍️ <strong>涩谷PARCO 6F</strong>：任天堂+宝可梦+海贼王旗舰店<br>
         🛍️ <strong>涩谷LOFT</strong>：7层日杂文具
       </td>
@@ -1452,7 +1462,7 @@ setInterval(fetchRate, 30 * 60 * 1000);
   <h4 style="color:var(--vermillion);margin-bottom:10px;">🧾 日本退税&省钱通用法则</h4>
   <table>
     <tr><th>项目</th><th>详情</th></tr>
-    <tr><td>🛃 退税门槛</td><td>同日同店满 <strong>¥5,000日元</strong>（≈¥245 CNY）即可</td></tr>
+    <tr><td>🛃 退税门槛</td><td>同日同店满 <strong>¥5,000日元</strong>（<span data-jpy="5000">≈¥--</span> CNY）即可</td></tr>
     <tr><td>💰 退税率</td><td>独立门店<strong>10%全额</strong>；百货商场扣除1.55%手续费，实退<strong>8.45%</strong></td></tr>
     <tr><td>📄 证件</td><td><strong>护照原件</strong>（复印件不行！）当天随身携带</td></tr>
     <tr><td>🏬 商场策略</td><td>百货虽退8.45%，但可叠<strong>95折卡+返点+银行返现</strong>，综合往往比独立店更划算</td></tr>
@@ -1472,13 +1482,13 @@ setInterval(fetchRate, 30 * 60 * 1000);
     <tr><td>📌 人均（机酒+门票）</td><td>已预订套餐</td><td class="budget-total">≈¥17,482/人</td></tr>
     <tr><td>🍽️ 餐饮（另计）</td><td>≈¥350/天/人 ×7天 ×2人</td><td class="price">≈¥4,900</td></tr>
     <tr><td>🚇 市内交通（另计）</td><td>≈¥80/天/人 ×7天 ×2人（Suica充值）</td><td class="price">≈¥1,120</td></tr>
-    <tr><td>🗻 富士山交通（另计）</td><td>巴士往返¥2,200×2 + 周游券¥1,500×2</td><td class="price">≈¥365</td></tr>
+    <tr><td>🗻 富士山交通（另计）</td><td>巴士往返¥2,200×2 + 周游券¥1,500×2</td><td class="price"><span data-jpy="7400">≈¥--</span></td></tr>
     <tr><td>🎫 景点门票（另计）</td><td>SHIBUYA SKY/东京塔/天上山缆车等</td><td class="price">≈¥1,000</td></tr>
-    <tr style="font-weight:700;background:#fef9f0;"><td>💰 总计</td><td>套餐+餐饮+交通+门票（不含购物）</td><td class="budget-total">≈¥42,350（2人）</td></tr>
-    <tr><td>📌 人均总计</td><td>含全部机酒食交景</td><td class="budget-total">≈¥21,175/人</td></tr>
+    <tr style="font-weight:700;background:#fef9f0;"><td>💰 总计</td><td>套餐+餐饮+交通+门票（不含购物）</td><td class="budget-total">≈¥42,300（2人）</td></tr>
+    <tr><td>📌 人均总计</td><td>含全部机酒食交景</td><td class="budget-total">≈¥21,150/人</td></tr>
     <tr><td style="color:var(--muted);font-size:12px;padding-top:8px;" colspan="3">✅ 套餐已预订（¥34,964.33），其余为预估。购物另计。</td></tr>
   </table>
-  <p style="font-size:12px;color:var(--muted);margin-top:8px;">💡 以上为预估，实际价格以预订时为准。购物预算另计。建议换汇 ¥3-5万日元现金（约¥1,500-2,500 CNY），其余刷卡/支付宝。</p>
+  <p style="font-size:12px;color:var(--muted);margin-top:8px;">💡 以上为预估，实际价格以预订时为准。购物预算另计。建议换汇 ¥3-5万日元现金（约<span data-jpy-range="30000,50000">≈¥--</span> CNY），其余刷卡/支付宝。</p>
 </div>
 
 <!-- ═══════════ WEATHER ═══════════ -->
@@ -1549,7 +1559,7 @@ setInterval(fetchRate, 30 * 60 * 1000);
     <h4>📸 拍照穿搭建议</h4>
     <ul>
       <li>🎨 <strong>色系</strong>：日系米色/卡其/藏蓝/酒红 — 和神社寺庙+城市街景都很搭</li>
-      <li>⛩️ 浅草寺：可以租和服体验（≈¥3,000-5,000），江户风情直接拉满</li>
+      <li>⛩️ 浅草寺：可以租和服体验（<span data-jpy-range="3000,5000">≈¥--</span>），江户风情直接拉满</li>
       <li>🗼 东京塔：橘红塔身背景，穿白色/浅蓝/黑色最出片</li>
       <li>🎢 USJ：穿<strong>亮色系</strong>！避开红色（和任天堂餐盘撞色）</li>
       <li>🗻 富士山：蓝天+白雪山，穿暖色调（姜黄/砖红）对比感强</li>
