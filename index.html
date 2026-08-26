@@ -637,7 +637,7 @@ setInterval(fetchRate, 30 * 60 * 1000);
       <tr><th>目的地</th><th>交通方式</th><th>所需时间</th><th>单程费用</th></tr>
       <tr><td>🎢 <strong>环球影城 USJ</strong></td><td>心斋桥→梅田→JR环球城站</td><td>≈35分钟</td><td>≈¥500</td></tr>
       <tr><td>🦀 <strong>道顿堀/心斋桥</strong></td><td>步行（酒店就在心斋桥商圈）</td><td>≈10分钟</td><td>¥0 ✨</td></tr>
-      <tr><td>🏯 <strong>大阪城</strong></td><td>长堀桥→长堀鹤见绿地线→谷町四丁目</td><td>≈20分钟</td><td>¥230</td></tr>
+      <tr><td>🏯 <strong>大阪城</strong></td><td>长堀桥→长堀鹤见绿地线→森之宫</td><td>≈20分钟</td><td>¥230</td></tr>
       <tr><td>✈️ <strong>关西机场 KIX</strong></td><td>南海电铁→难波→御堂筋线→心斋桥</td><td>≈60分钟</td><td>¥1,080</td></tr>
     </table>
   </div>
@@ -718,32 +718,34 @@ setInterval(fetchRate, 30 * 60 * 1000);
     <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
       <div class="day-num">2</div>
       <div class="day-info">
-        <div class="day-title">🎢 日本环球影城 USJ 全天！</div>
+        <div class="day-title">🏯 大阪城 → 🎢 USJ半日（15:00入场）</div>
         <div class="day-date">9月25日 周五</div>
       </div>
-      <div class="day-tag">🎢 USJ</div>
+      <div class="day-tag">🏯 大阪城 → 🎢 USJ</div>
     </div>
     <div class="day-body">
       <div class="info-grid">
         <div class="info-box transport">
           <h4>🚌 今日交通</h4>
-          <p>🚌 <strong>心斋桥→梅田→JR环球城站</strong>（约35分钟，自费≈¥500）</p>
-          <p>🎫 门票：另买（¥468/人 ×2 = ¥936）</p>
-          <p>⏰ 开园：通常8:00-8:30 · 建议7:30到门口排队</p>
+          <p>🏯 上午：长堀桥→长堀鹤见绿地线→<strong>森之宫</strong>→大阪城天守阁（约20分钟 ¥230）</p>
+          <p>🕑 14:00 <strong>森之宫→JR环状线→西九条→环球城站</strong>（约30分钟）</p>
+          <p>🎫 门票：USJ半日票（15:00入场 · ¥468/人 ×2 = ¥936）</p>
+          <p>⏰ 15:00 入场 · 约21:00闭园（约6小时）</p>
         </div>
         <div class="info-box photo">
-          <h4>📸 必拍机位 TOP 5</h4>
+          <h4>📸 必拍机位</h4>
           <ul>
-            <li>🏆 <strong>超级任天堂世界</strong> — 问号砖墙+蘑菇灯箱+水管穿越照！整点奇诺比奥巡游（14:00/16:00）</li>
-            <li>🏆 <strong>霍格沃茨城堡</strong> — 三把扫帚餐厅窗边拍城堡+湖面倒影，傍晚光影最绝</li>
-            <li><strong>咚奇刚国度（2025新开）</strong> — 热带丛林风，最新园区！</li>
-            <li><strong>小黄人乐园</strong> — 彩色房子+监狱墙，举爆米花桶跑跳抓拍</li>
+            <li>🏯 <strong>大阪城天守阁</strong> — 金绿相间，护城河+石垣，大阪最经典地标</li>
+            <li>🏆 <strong>超级任天堂世界</strong> — 问号砖墙+蘑菇灯箱+水管穿越照！傍晚亮灯更出片</li>
+            <li>🏆 <strong>霍格沃茨城堡</strong> — 三把扫帚窗边拍城堡+倒影，傍晚光影最绝</li>
+            <li><strong>小黄人乐园</strong> — 彩色房子+监狱墙，举爆米花桶抓拍</li>
             <li><strong>环球地球标志</strong> — 进门必拍，UNIVERSAL字转正时连拍</li>
           </ul></div>
         </div>
         <div class="info-box food">
-          <h4>🍽️ USJ必吃</h4>
+          <h4>🍽️ 今日美食</h4>
           <ul>
+            <li>🍱 <strong>午餐：大阪城/京桥</strong> — 或回心斋桥吃大阪烧·串炸</li>
             <li>🏆 <strong>奇诺比奥咖啡店</strong>（任天堂园区）— 蘑菇披萨碗¥1,980、星星鸡排饭¥1,780</li>
             <li>⚠️ 一入园立刻APP抢整理券+扫码订座！</li>
             <li><strong>三把扫帚酒吧</strong> — 黄油啤酒+英式烤鸡（¥2,200）</li>
@@ -751,7 +753,7 @@ setInterval(fetchRate, 30 * 60 * 1000);
           </ul>
         </div>
       </div>
-      <p style="font-size:13px;color:var(--muted);margin-top:8px;">💡 <strong>USJ生存法则</strong>：① 心斋桥出发约35分钟，建议7:30到门口排队 ② USJ App提前绑票 ③ 开园直冲任天堂领整理券 ④ 单人通道比快速券还快 ⑤ 9月底万圣节限定活动！⑥ 穿亮色系，避开红色</p>
+      <p style="font-size:13px;color:var(--muted);margin-top:8px;">💡 <strong>USJ半日（15:00后）攻略</strong>：① 一入场立刻刷 App 抢「任天堂整理券」+订奇诺比奥咖啡店 ② 直奔任天堂世界→哈利波特（两大热门先冲）③ 过山车全走<strong>单人通道</strong> ④ 傍晚看万圣节限定僵尸街秀+夜场，半日票正好赶上 ⑤ ⚠️ 任天堂整理券通常开园就派、15:00入场可能已被领完——若任天堂是必玩，建议提前买含任天堂的快速通行。</p>
     </div>
   
       <!-- 📝 自定义备注 -->
@@ -1486,7 +1488,7 @@ setInterval(fetchRate, 30 * 60 * 1000);
     <tr><td>📶 流量卡（已购）</td><td>日本上网流量卡</td><td class="price">¥177</td></tr>
     <tr style="font-weight:700;background:#fef9f0;"><td>📌 机+酒+卡已订小计</td><td>东航往返 + 大阪2晚 + 东京4晚 + 流量卡</td><td class="budget-total">≈¥13,520</td></tr>
     <tr><td>🚄 新干线（另买）</td><td>大阪→东京 のぞみ号 ×2人</td><td class="price">≈¥1,250</td></tr>
-    <tr><td>🎢 USJ门票（另买）</td><td>环球影城1日票 ¥468×2</td><td class="price">¥936</td></tr>
+    <tr><td>🎢 USJ门票（另买）</td><td>环球影城半日票（15:00后）¥468×2</td><td class="price">¥936</td></tr>
     <tr><td>🏰 迪士尼门票（另买）</td><td>东京迪士尼1日票 ¥413×2</td><td class="price">¥826</td></tr>
     <tr><td>🍽️ 餐饮（另计）</td><td>≈¥350/天/人 ×7天 ×2人</td><td class="price">≈¥4,900</td></tr>
     <tr><td>🚇 市内交通（另计）</td><td>≈¥80/天/人 ×7天 ×2人（Suica充值）</td><td class="price">≈¥1,120</td></tr>
