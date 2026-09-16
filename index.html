@@ -456,8 +456,8 @@
   <span class="tag red">9/24 抵大阪</span> →
   <span class="tag green">9/25 环球影城</span> →
   <span class="tag blue">9/26 新干线→东京</span> →
-  <span class="tag red">9/27 富士山</span> →
-  <span class="tag green">9/28 浅草寺·银座</span> →
+  <span class="tag red">9/27 浅草寺·银座</span> →
+  <span class="tag green">9/28 富士山</span> →
   <span class="tag blue">9/29 迪士尼海洋</span> →
   <span class="tag">9/30 返程</span>
 </div>
@@ -844,8 +844,83 @@ setInterval(fetchRate, 30 * 60 * 1000);
     <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
       <div class="day-num">4</div>
       <div class="day-info">
-        <div class="day-title">🗻 富士山五合目 · 忍野八海 · 河口湖 · 御殿场奥莱</div>
+        <div class="day-title">⛩️ 浅草寺 · 须贺神社 · 银座 · 晴空塔</div>
         <div class="day-date">9月27日 周日</div>
+      </div>
+      <div class="day-tag">⛩️ 经典日</div>
+    </div>
+    <div class="day-body">
+      <div class="info-grid">
+        <div class="info-box transport">
+          <h4>🚇 今日路线</h4>
+          <p>🌅 上午：<strong>浅草寺</strong>（浅草桥→浅草 4min ¥180，超近！）</p>
+          <p>🎬 中午：<strong>四谷须贺神社</strong>（浅草→四谷三丁目 30min ¥350）</p>
+          <p>🛍️ 下午：<strong>银座</strong>（四谷→银座 15min ¥200）</p>
+          <p>🗼 傍晚：<strong>东京晴空塔</strong>（银座→押上 20min ¥280）</p>
+        </div>
+        <div class="info-box photo">
+          <h4>📸 拍照打卡</h4>
+          <ul>
+            <li>🏆 <strong>浅草寺·雷门大灯笼</strong> — 清晨人少最出片！五重塔仰拍</li>
+            <li>🏆 <strong>须贺神社·男坂阶梯</strong> — 《你的名字》名场面！红色栏杆阶梯，泷和三叶重逢地</li>
+            <li>🎬 <strong>须贺神社前十字路口+红色邮筒</strong> — 电影同款机位，黄昏光线最佳</li>
+            <li><strong>银座·CHANEL大楼</strong> — 银座并木通时尚街拍</li>
+            <li><strong>晴空塔·天望回廊</strong> — 450m高空玻璃地板，东京最高点</li>
+          </ul></div>
+        </div>
+        <div class="info-box food">
+          <h4>🍽️ 今日美食</h4>
+          <ul>
+            <li><strong>浅草·寿喜园 7号抹茶</strong> — 仲见世街最强抹茶冰淇淋</li>
+            <li><strong>浅草·浅草今半</strong> — 百年和牛寿喜烧（¥3,500起）</li>
+            <li><strong>须贺神社周边·Cafe La Bohème</strong> — 《你的名字》泷打工餐厅原型！意面披萨超赞</li>
+            <li><strong>银座·资生堂Parlour</strong> — 百年老铺草莓芭菲（¥2,000）</li>
+            <li><strong>晴空塔·Solamachi 6F美食街</strong> — 30+餐厅，俯瞰东京夜景晚餐</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4 style="color:var(--indigo);margin-top:16px;margin-bottom:10px;">🛍️ 银座购物攻略</h4>
+      <div class="info-grid">
+        <div class="info-box" style="border-left-color:#111;">
+          <h4>🏬 百货商场（退税+返点）</h4>
+          <ul style="font-size:13px;">
+            <li>🏆 <strong>银座三越</strong> — 高端百货标杆，化妆品/奢侈品/食品层全，凭护照领95折卡</li>
+            <li><strong>松屋银座</strong> — 银联白金9折！仅Polo线但折扣是东京最划算</li>
+            <li><strong>GINZA SIX</strong> — 最新最大，茑屋书店+B2美食街，退税柜台在B1</li>
+          </ul>
+        </div>
+        <div class="info-box" style="border-left-color:#d4842a;">
+          <h4>🛍️ 品牌旗舰店</h4>
+          <ul style="font-size:13px;">
+            <li><strong>UNIQLO 银座旗舰店</strong> — 12层！全球最大，日本限定款</li>
+            <li><strong>MUJI 有乐町旗舰店</strong> — 食品+家居+服装，退税友好</li>
+            <li><strong>LOFT 银座</strong> — 6层日杂，文具/美妆/旅行好物</li>
+            <li><strong>Dover Street Market</strong> — 川久保玲买手店，潮人必逛</li>
+            <li><strong>伊东屋 Itoya</strong> — 百年文具店，纸品控天堂</li>
+          </ul>
+        </div>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin-top:8px;">💡 银座周末有<strong>步行者天国</strong>（车辆禁行），在马路中间拍照超爽。购物满¥5,000即可退税。三越B1食品层闭店前有打折寿司！</p>
+    </div>
+  
+      <!-- 📝 自定义备注 -->
+      <div class="day-notes">
+        <h5>📝 我的备注</h5>
+        <textarea data-day-note="4" placeholder="记下想买的东西、提醒事项、餐厅预约..."></textarea>
+        <div class="note-saved" data-note-saved="4">✅ 已自动保存</div>
+      </div>
+
+    </div>
+
+  <!-- ══ Day 5 ══ -->
+  <div class="day-dot" style="margin-top:208px;"></div>
+  <div class="day-card open">
+    <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+      <div class="day-num">5</div>
+      <div class="day-info">
+        <div class="day-title">🗻 富士山五合目 · 忍野八海 · 河口湖 · 御殿场奥莱</div>
+        <div class="day-date">9月28日 周一</div>
       </div>
       <div class="day-tag">🗻 富士山</div>
     </div>
@@ -904,81 +979,6 @@ setInterval(fetchRate, 30 * 60 * 1000);
       <div style="background:#fef9f0;border-radius:8px;padding:12px 14px;margin-top:10px;font-size:13px;">
         <strong>💡 省钱必做</strong>：① 到Welcome Center扫QR领电子优惠券（护照必备）→ 很多品牌免税基础上再9-95折 ② 单店满¥5,500退税 ③ 穿最舒服的鞋！290家店逛到腿断 ④ 平日去人少货全 ⑤ 梦之大桥拍富士山+商场全景
       </div>
-    </div>
-  
-      <!-- 📝 自定义备注 -->
-      <div class="day-notes">
-        <h5>📝 我的备注</h5>
-        <textarea data-day-note="4" placeholder="记下想买的东西、提醒事项、餐厅预约..."></textarea>
-        <div class="note-saved" data-note-saved="4">✅ 已自动保存</div>
-      </div>
-
-    </div>
-
-  <!-- ══ Day 5 ══ -->
-  <div class="day-dot" style="margin-top:208px;"></div>
-  <div class="day-card open">
-    <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
-      <div class="day-num">5</div>
-      <div class="day-info">
-        <div class="day-title">⛩️ 浅草寺 · 须贺神社 · 银座 · 晴空塔</div>
-        <div class="day-date">9月28日 周一</div>
-      </div>
-      <div class="day-tag">⛩️ 经典日</div>
-    </div>
-    <div class="day-body">
-      <div class="info-grid">
-        <div class="info-box transport">
-          <h4>🚇 今日路线</h4>
-          <p>🌅 上午：<strong>浅草寺</strong>（浅草桥→浅草 4min ¥180，超近！）</p>
-          <p>🎬 中午：<strong>四谷须贺神社</strong>（浅草→四谷三丁目 30min ¥350）</p>
-          <p>🛍️ 下午：<strong>银座</strong>（四谷→银座 15min ¥200）</p>
-          <p>🗼 傍晚：<strong>东京晴空塔</strong>（银座→押上 20min ¥280）</p>
-        </div>
-        <div class="info-box photo">
-          <h4>📸 拍照打卡</h4>
-          <ul>
-            <li>🏆 <strong>浅草寺·雷门大灯笼</strong> — 清晨人少最出片！五重塔仰拍</li>
-            <li>🏆 <strong>须贺神社·男坂阶梯</strong> — 《你的名字》名场面！红色栏杆阶梯，泷和三叶重逢地</li>
-            <li>🎬 <strong>须贺神社前十字路口+红色邮筒</strong> — 电影同款机位，黄昏光线最佳</li>
-            <li><strong>银座·CHANEL大楼</strong> — 银座并木通时尚街拍</li>
-            <li><strong>晴空塔·天望回廊</strong> — 450m高空玻璃地板，东京最高点</li>
-          </ul></div>
-        </div>
-        <div class="info-box food">
-          <h4>🍽️ 今日美食</h4>
-          <ul>
-            <li><strong>浅草·寿喜园 7号抹茶</strong> — 仲见世街最强抹茶冰淇淋</li>
-            <li><strong>浅草·浅草今半</strong> — 百年和牛寿喜烧（¥3,500起）</li>
-            <li><strong>须贺神社周边·Cafe La Bohème</strong> — 《你的名字》泷打工餐厅原型！意面披萨超赞</li>
-            <li><strong>银座·资生堂Parlour</strong> — 百年老铺草莓芭菲（¥2,000）</li>
-            <li><strong>晴空塔·Solamachi 6F美食街</strong> — 30+餐厅，俯瞰东京夜景晚餐</li>
-          </ul>
-        </div>
-      </div>
-
-      <h4 style="color:var(--indigo);margin-top:16px;margin-bottom:10px;">🛍️ 银座购物攻略</h4>
-      <div class="info-grid">
-        <div class="info-box" style="border-left-color:#111;">
-          <h4>🏬 百货商场（退税+返点）</h4>
-          <ul style="font-size:13px;">
-            <li>🏆 <strong>银座三越</strong> — 高端百货标杆，化妆品/奢侈品/食品层全，凭护照领95折卡</li>
-            <li><strong>松屋银座</strong> — 银联白金9折！仅Polo线但折扣是东京最划算</li>
-            <li><strong>GINZA SIX</strong> — 最新最大，茑屋书店+B2美食街，退税柜台在B1</li>
-          </ul>
-        </div>
-        <div class="info-box" style="border-left-color:#d4842a;">
-          <h4>🛍️ 品牌旗舰店</h4>
-          <ul style="font-size:13px;">
-            <li><strong>UNIQLO 银座旗舰店</strong> — 12层！全球最大，日本限定款</li>
-            <li><strong>MUJI 有乐町旗舰店</strong> — 食品+家居+服装，退税友好</li>
-            <li><strong>LOFT 银座</strong> — 6层日杂，文具/美妆/旅行好物</li>
-            <li><strong>Dover Street Market</strong> — 川久保玲买手店，潮人必逛</li>
-            <li><strong>伊东屋 Itoya</strong> — 百年文具店，纸品控天堂</li>
-          </ul>
-        </div>
-      </div>
-      <p style="font-size:12px;color:var(--muted);margin-top:8px;">💡 银座周末有<strong>步行者天国</strong>（车辆禁行），在马路中间拍照超爽。购物满¥5,000即可退税。三越B1食品层闭店前有打折寿司！</p>
     </div>
   
       <!-- 📝 自定义备注 -->
@@ -1307,7 +1307,7 @@ setInterval(fetchRate, 30 * 60 * 1000);
         <li>🚇 表参道站步行约8分钟</li>
         <li>🕐 <strong>11:00-20:00</strong> · ⚠️ <strong style="color:var(--vermillion)">周三定休</strong></li>
         <li>📦 两家店面对面，基本款式齐全</li>
-        <li>🗓️ <strong>Day5（9/28周一）银座行程可顺路！</strong>青山→银座电车仅10分钟</li>
+        <li>🗓️ <strong>Day4（9/27周日）银座行程可顺路！</strong>青山→银座电车仅10分钟</li>
         <li>⚠️ 大阪没有SOU·SOU店铺</li>
       </ul>
     </div>
@@ -1361,7 +1361,7 @@ setInterval(fetchRate, 30 * 60 * 1000);
       <h4>🏆 最佳购买渠道</h4>
       <ol style="font-size:13px;padding-left:18px;">
         <li><strong>🥇 银座旗舰店 / 银座三越</strong> — 货最全，经典驼色格纹款随时有 <span class="rel rel-o">🟢官方</span></li>
-        <li><strong>🥈 御殿场奥莱 Burberry店</strong> — 经典格纹围巾常<strong>7折</strong> <span class="rel rel-u">🟡参考</span>，Day4顺路</li>
+        <li><strong>🥈 御殿场奥莱 Burberry店</strong> — 经典格纹围巾常<strong>7折</strong> <span class="rel rel-u">🟡参考</span>，Day5顺路</li>
         <li><strong>🥉 新宿伊势丹 / 池袋东武</strong> — 百货退税 + 返点叠加</li>
       </ol>
     </div>
@@ -1397,7 +1397,7 @@ setInterval(fetchRate, 30 * 60 * 1000);
       </ul>
     </div>
   </div>
-  <p style="font-size:12px;color:var(--muted);margin-top:8px;">💡 <strong>总结</strong>：经典羊绒格纹围巾日本≈国内5-6折，省¥1,300+。Day4御殿场奥莱顺路碰运气，Day5银座专柜货全兜底。9月底刚好入秋，买回来直接能用！</p>
+  <p style="font-size:12px;color:var(--muted);margin-top:8px;">💡 <strong>总结</strong>：经典羊绒格纹围巾日本≈国内5-6折，省¥1,300+。Day5御殿场奥莱顺路碰运气，Day4银座专柜货全兜底。9月底刚好入秋，买回来直接能用！</p>
 </div>
 
 <!-- ═══════════ SHOPPING × ITINERARY ═══════════ -->
@@ -1431,21 +1431,7 @@ setInterval(fetchRate, 30 * 60 * 1000);
       </td>
     </tr>
     <tr>
-      <td><strong>Day4</strong><br>9/27 富士山</td>
-      <td>🗻 富士五合目<br>忍野八海<br>河口湖<br>🛍️ 御殿场奥莱</td>
-      <td>🐎 <strong>Ralph Lauren</strong><br>🍋 <strong>Lululemon</strong><br>👟 <strong>Keen</strong><br>👟 <strong>HOKA</strong><br>🧣 <strong>Burberry围巾</strong><br>👜 <strong>YSL/LOEWE</strong></td>
-      <td>🏆 日本最大奥莱·290家店·富士山景观<br>
-        🐎 RL：5-8折 <span class="rel rel-u">🟡参考</span> · 比国内奥莱便宜一截<br>
-        🍋 Lulu：银座一件价这里买2-3件 <span class="rel rel-u">🟡参考</span><br>
-        🧣 Burberry：经典格纹围巾常7折 <span class="rel rel-u">🟡参考</span> · 驼色看运气<br>
-        👜 YSL：包包省¥6,000+ <span class="rel rel-u">🟡参考</span> · LOEWE 4-6折 · CELINE 4-6折 <span class="rel rel-u">🟡参考</span><br>
-        💰 Moncler：一件价买两件<br>
-        ⚠️ 到Welcome Center扫QR领优惠券！单店满¥5,500退税<br>
-        ⚠️ 穿最舒服的鞋！营业到20:00 · 只有2-3小时购物时间
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Day5</strong><br>9/28 东京</td>
+      <td><strong>Day4</strong><br>9/27 东京</td>
       <td>⛩️ 浅草寺<br>🎬 须贺神社<br>🛍️ 银座<br>🗼 晴空塔</td>
       <td>🖤 <strong>Chanel</strong><br>🐎 <strong>Ralph Lauren</strong><br>🧣 <strong>Burberry</strong><br>🛍️ <strong>银座百货</strong></td>
       <td>
@@ -1457,7 +1443,21 @@ setInterval(fetchRate, 30 * 60 * 1000);
         🛍️ <strong>UNIQLO银座旗舰店</strong>：12层！日本限定款<br>
         🛍️ <strong>MUJI有乐町</strong>：食品+家居+服装一站式<br>
         🛍️ <strong>伊东屋Itoya</strong>：百年文具店·纸品控天堂<br>
-        💡 银座周末步行者天国，但Day5是周一没有
+        💡 银座周末步行者天国！Day4（周日）正好赶上，马路中间拍照超爽
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Day5</strong><br>9/28 富士山</td>
+      <td>🗻 富士五合目<br>忍野八海<br>河口湖<br>🛍️ 御殿场奥莱</td>
+      <td>🐎 <strong>Ralph Lauren</strong><br>🍋 <strong>Lululemon</strong><br>👟 <strong>Keen</strong><br>👟 <strong>HOKA</strong><br>🧣 <strong>Burberry围巾</strong><br>👜 <strong>YSL/LOEWE</strong></td>
+      <td>🏆 日本最大奥莱·290家店·富士山景观<br>
+        🐎 RL：5-8折 <span class="rel rel-u">🟡参考</span> · 比国内奥莱便宜一截<br>
+        🍋 Lulu：银座一件价这里买2-3件 <span class="rel rel-u">🟡参考</span><br>
+        🧣 Burberry：经典格纹围巾常7折 <span class="rel rel-u">🟡参考</span> · 驼色看运气<br>
+        👜 YSL：包包省¥6,000+ <span class="rel rel-u">🟡参考</span> · LOEWE 4-6折 · CELINE 4-6折 <span class="rel rel-u">🟡参考</span><br>
+        💰 Moncler：一件价买两件<br>
+        ⚠️ 到Welcome Center扫QR领优惠券！单店满¥5,500退税<br>
+        ⚠️ 穿最舒服的鞋！营业到20:00 · 只有2-3小时购物时间 · 周一人少货全
       </td>
     </tr>
     <tr>
@@ -1474,7 +1474,7 @@ setInterval(fetchRate, 30 * 60 * 1000);
 <div style="background:#f0f4ff;border-radius:12px;padding:14px 18px;margin-bottom:20px;text-align:center;">
   <strong>🗺️ 你的购物清单地图</strong><br>
   <span style="font-size:13px;color:var(--muted);">
-    Day1 大阪心斋桥 → Day3 涩谷·表参道 → Day4 御殿场奥莱 → Day5 银座 → Day7 成田机场
+    Day1 大阪心斋桥 → Day3 涩谷·表参道 → Day4 银座 → Day5 御殿场奥莱 → Day7 成田机场
   </span>
 </div>
 
@@ -1540,12 +1540,12 @@ setInterval(fetchRate, 30 * 60 * 1000);
       <td>薄长袖+牛仔裤 · 新干线空调凉带薄外套</td>
     </tr>
     <tr>
-      <td><strong>9/27</strong></td><td>🗻 富士山</td><td>22°C<br><span style="color:var(--vermillion)">五合目 5°C</span></td><td>12°C<br><span style="color:var(--vermillion)">五合目 0°C</span></td><td>⛅ 山间多变</td>
-      <td>短袖+卫衣+<strong>防风外套/轻薄羽绒</strong> · 围巾手套备用</td>
+      <td><strong>9/27</strong></td><td>⛩️ 东京</td><td>26°C</td><td>19°C</td><td>☀️ 晴</td>
+      <td>短袖打底+薄外套 · 和服体验备选</td>
     </tr>
     <tr>
-      <td><strong>9/28</strong></td><td>⛩️ 东京</td><td>26°C</td><td>19°C</td><td>☀️ 晴</td>
-      <td>短袖打底+薄外套 · 和服体验备选</td>
+      <td><strong>9/28</strong></td><td>🗻 富士山</td><td>22°C<br><span style="color:var(--vermillion)">五合目 5°C</span></td><td>12°C<br><span style="color:var(--vermillion)">五合目 0°C</span></td><td>⛅ 山间多变</td>
+      <td>短袖+卫衣+<strong>防风外套/轻薄羽绒</strong> · 围巾手套备用</td>
     </tr>
     <tr>
       <td><strong>9/29</strong></td><td>🏰 东京·迪士尼</td><td>25°C</td><td>18°C</td><td>⛅ 多云</td>
